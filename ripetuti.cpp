@@ -4,27 +4,19 @@
 using namespace std;
 bool checkRipetute(string word)
 {
-    bool rip = false;
     for (int i = 0; i < word.length() - 1; i++)
     {
-        if (!rip)
+        for (int y = i + 1; y < word.length(); y++)
         {
-            for (int y = i + 1; y < word.length(); y++)
+            if (word[i] == word[y])
             {
-                if (word[i] == word[y])
-                {
-                    rip = true;
-                    break;
-                }
+                return true;
             }
         }
-        else
-        {
-            break;
-        }
     }
-    return rip;
+    return false;
 }
+
 int main()
 {
     string parola;

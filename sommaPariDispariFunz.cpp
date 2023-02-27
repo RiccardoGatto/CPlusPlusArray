@@ -6,6 +6,7 @@ void faiSomme(int num[], int lung)
 {
     int pari = 0;
     int dispari = 0;
+    /*   CICLI SEPARATI
     for (int i = 0; i < lung; i++)
     {
         if (num[i] % 2 == 0)
@@ -13,10 +14,22 @@ void faiSomme(int num[], int lung)
             pari += num[i];
         }
     }
-
     for (int i = 0; i < lung; i++)
     {
         if (num[i] % 2 != 0)
+        {
+            dispari += num[i];
+        }
+    }
+    */
+    // CICLO UNICO
+    for (int i = 0; i < lung; i++)
+    {
+        if (num[i] % 2 == 0)
+        {
+            pari += num[i];
+        }
+        else
         {
             dispari += num[i];
         }
@@ -32,7 +45,7 @@ int main()
     int numeri[quanti];
     for (int i = 0; i < quanti; i++)
     {
-        cout << "Ora inserisci il " << i+1 << " numero: ";
+        cout << "Ora inserisci il " << i + 1 << " numero: ";
         cin >> numeri[i];
     }
     faiSomme(numeri, quanti);
