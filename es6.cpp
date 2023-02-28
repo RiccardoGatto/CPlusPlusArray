@@ -20,25 +20,23 @@ int main()
     cin >> quanti;
     cout << endl;
     int interi[quanti];
-    for (int i = 0; i < quanti; i++)
+    for (int i = 0; i < quanti; i++) //RIEMPIO L'ARRAY
     {
         cout << "Ora inserisci il " << i + 1 << " numero: ";
         cin >> interi[i];
     }
-    int lunghezza = sizeof(interi) / sizeof(interi[0]);
-    // cout << contaPari(interi, lunghezza);
-    int lunghezzaOutput = contaPari(interi, lunghezza);
-    int pari[lunghezzaOutput];
-    int index = 0;
-    for (int i = 0; i < lunghezza; i++)
+    int lunghezzaOutput = contaPari(interi, quanti); // CONTO QUANTI PARI CI SONO NELL'ARRAY CHE HO RIEMPITO
+    int pari[lunghezzaOutput]; // DEFINISCO UN ARRAY DI LUNGHEZZA QUANTO IL NUMERO DI PARI PRIMA DEFINITO
+    int index = 0; // INIZIALIZZO UNA VARIABILE INTERA CHE MI SCORRE L'ARRAY DEI RISULTATI
+    for (int i = 0; i < quanti; i++) // SCORRO L'ARRAY ALLA RICERCA DEGLI ELEMENTI PARI
     {
         if (interi[i] % 2 == 0)
         {
-            pari[index] = interi[i];
-            index++;
+            pari[index] = interi[i]; // SE E' PARI LO AGGIUNGO ALL'ARRAY DEI RISULTATI
+            index++; // INCREMENTO L'INDICE DELL'ARRAY RISULTATI
         }
     }
-    for (int i = 0; i < lunghezzaOutput; i++)
+    for (int i = 0; i < lunghezzaOutput; i++) // STAMPO L'ARRAY DEI RISULTATI
     {
         cout << pari[i] << "__" << endl;
     }
