@@ -1,17 +1,19 @@
 #include <array>
 #include <iostream>
 using namespace std;
-int checkSequenze(int arr[], int lung)
+int indexMax(int arr[], int lung)
 {
-    int sequenze = 0;
-    for (int i = 0; i < lung-1; i++)
+    int max = arr[0];
+    int indice=0;
+    for (int i = 1; i < lung; i++)
     {
-        if (arr[i]<=arr[i+1])
+        if (arr[i] > max)
         {
-            
+            max = arr[i];
+            indice=i;
         }
     }
-    return sequenze;
+    return indice;
 }
 int main()
 {
@@ -26,5 +28,5 @@ int main()
         cin >> interi[i];
     }
     int lunghezza = sizeof(interi) / sizeof(interi[0]);
-    cout << "\nLe sequenze ordinate nell'array sono' " << checkSequenze(interi, lunghezza);
+    cout << "Il primo numero piu' grande si trova in posizione " << indexMax(interi, lunghezza);
 }
