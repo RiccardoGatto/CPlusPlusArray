@@ -28,7 +28,7 @@ int comuni(int arr1[], int lung1, int arr2[], int lung2)
     int appoggio[min];  // CREO UN ARRAY DI APPOGGIO
     for (int i = 0; i < min; i++) // RIEMPIO L'ARRAY DI APPOGGIO CON NULL
     {
-        appoggio[i] = NULL;
+        appoggio[i] = (int)NULL;
     }
     int index = 0;
     for (int i = 0; i < lung1; i++) // INIZIO A CERCARE GLI ELEMENTI IN COMUNE
