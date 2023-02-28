@@ -4,11 +4,17 @@ using namespace std;
 int checkSequenze(int arr[], int lung)
 {
     int sequenze = 0;
+    bool check[lung-1];
+    int ind=0;
     for (int i = 0; i < lung-1; i++)
     {
-        if (arr[i]<=arr[i+1])
+        if (arr[i]<arr[i+1])
         {
-            
+            check[i]=true;
+        }
+        else
+        {
+            check[i]=false;
         }
     }
     return sequenze;
