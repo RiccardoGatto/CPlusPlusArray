@@ -34,7 +34,7 @@ bool presente(int num, int arr[], int lung)
 int comuni(int arr1[], int lung1, int arr2[], int lung2)
 {
     int elementiComuni = 0;
-    int minimo = min(lung1, lung2); // CERCO QUALE ARRAY HA IL NUMERO MINORE DI ELEMENTI
+    int minimo = min(lung1, lung2);  // CERCO QUALE ARRAY HA IL NUMERO MINORE DI ELEMENTI
     int appoggio[minimo];            // CREO UN ARRAY DI APPOGGIO
     for (int i = 0; i < minimo; i++) // INIZIALIZZO L'ARRAY DI APPOGGIO CON NULL
     {
@@ -45,19 +45,17 @@ int comuni(int arr1[], int lung1, int arr2[], int lung2)
     {
         for (int y = 0; y < lung2; y++)
         {
-            if (arr1[i] == arr2[y]) // TROVO DUE ELEMENTI UGUALI
+            if ((arr1[i] == arr2[y]) and (!presente(arr1[i], appoggio, minimo))) // TROVO DUE ELEMENTI UGUALI E NON L'HO GIA' CONTROLLATO PRECEDENTEMENTE
             {
-                if (!presente(arr1[i], appoggio, minimo)) // SE NON L'HO GIA' CONTROLLATO PRECEDENTEMENTE
-                {
-                    elementiComuni++;
-                    appoggio[i] = arr1[i]; //  AGGIUNGO L'ELEMENTO IN COMUNE NELL'ARRAY DI APPOGGIO
-                    index++;
-                }
+                elementiComuni++;
+                appoggio[i] = arr1[i]; //  AGGIUNGO L'ELEMENTO IN COMUNE NELL'ARRAY DI APPOGGIO
+                index++;
             }
         }
     }
     return elementiComuni;
 }
+
 int main()
 {
     int quanti1;

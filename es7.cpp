@@ -14,9 +14,9 @@ void riempi(int arr[], int lung)
 int checkSequenze(int arr[], int lung)
 {
     int sequenze = 0;
-    for (int i = 0; i < lung; i++)
+    for (int i = 0; i < lung-1; i++)
     {
-        if ((arr[i] < arr[i + 1]) and (i < lung - 1))
+        if (arr[i] < arr[i + 1])
         {
             while (arr[i] < arr[i + 1])
             {
