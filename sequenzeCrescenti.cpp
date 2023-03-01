@@ -31,6 +31,5 @@ int main()
         cout << "Ora inserisci il " << i + 1 << " numero: ";
         cin >> interi[i];
     }
-    int lunghezza = sizeof(interi) / sizeof(interi[0]);
-    cout << "\nLe sequenze ordinate nell'array sono' " << checkSequenze(interi, lunghezza);
+    cout << "\nLe sequenze ordinate nell'array sono' " << checkSequenze(interi, quanti);
 }
