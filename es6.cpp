@@ -14,7 +14,21 @@ int contaPari(int arr[], int lung)
     }
     return totPari;
 }
-
+void riempi(int arr[], int lung)
+{
+    for (int i = 0; i < lung; i++) //RIEMPIO L'ARRAY
+    {
+        cout << "Ora inserisci il " << i + 1 << " numero: ";
+        cin >> arr[i];
+    }
+}
+void mostra(int arr[], int lung)
+{
+    for (int i = 0; i < lung; i++)
+    {
+        cout << i+1 << " elemento: " << arr[i] << endl;
+    }
+}
 int main()
 {
     int quanti;
@@ -22,11 +36,7 @@ int main()
     cin >> quanti;
     cout << endl;
     int interi[quanti];
-    for (int i = 0; i < quanti; i++) //RIEMPIO L'ARRAY
-    {
-        cout << "Ora inserisci il " << i + 1 << " numero: ";
-        cin >> interi[i];
-    }
+    riempi (interi, quanti);
     int lunghezzaOutput = contaPari(interi, quanti); // CONTO QUANTI PARI CI SONO NELL'ARRAY CHE HO RIEMPITO
     int pari[lunghezzaOutput]; // DEFINISCO UN ARRAY DI LUNGHEZZA QUANTO IL NUMERO DI PARI PRIMA DEFINITO
     int index = 0; // INIZIALIZZO UN INDICE CHE MI SCORRE L'ARRAY DEI RISULTATI
@@ -39,8 +49,5 @@ int main()
         }
     }
     cout << "\n________________________________________________________\n\n";
-    for (int i = 0; i < lunghezzaOutput; i++) // SCORRO E VISUALIZZO L'ARRAY DEI RISULTATI
-    {
-        cout << i+1 << " elemento: " << pari[i] << endl;
-    }
+    mostra(pari, lunghezzaOutput); // STAMPO TUTTI GLI ELEMENTI DELL'ARRAY FINALE
 }
