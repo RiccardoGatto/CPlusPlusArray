@@ -23,16 +23,13 @@ int *concatena(int arr1[], int l1, int arr2[], int l2)
 {
     int lRis = l1 + l2;
     int risultato[lRis];
-    int indice = 0;
     for (int i = 0; i < l1; i++)
     {
-        risultato[indice] = arr1[i];
-        indice++;
+        risultato[i] = arr1[i];
     }
-    for (int i = 0; i < l2; i++)
+    for (int i = l1; i < lRis; i++)
     {
-        risultato[indice] = arr2[i];
-        indice++;
+        risultato[i] = arr2[i - l1];
     }
     mostra(risultato, lRis);
     return risultato;
