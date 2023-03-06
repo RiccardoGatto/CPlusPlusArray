@@ -2,6 +2,42 @@
 #include <iostream>
 using namespace std;
 
+void riempi(int arr[], int lung)
+{
+    for (int i = 0; i < lung; i++) // RIEMPIO L'ARRAY
+    {
+        cout << "Ora inserisci il " << i + 1 << " numero: ";
+        cin >> arr[i];
+    }
+}
+
+void mostra(int arr[], int lung)
+{
+    for (int i = 0; i < lung; i++)
+    {
+        cout << i + 1 << " elemento: " << arr[i] << endl;
+    }
+}
+
+int *concatena(int arr1[], int l1, int arr2[], int l2)
+{
+    int lRis = l1 + l2;
+    int risultato[lRis];
+    int indice = 0;
+    for (int i = 0; i < l1; i++)
+    {
+        risultato[indice] = arr1[i];
+        indice++;
+    }
+    for (int i = 0; i < l2; i++)
+    {
+        risultato[indice] = arr2[i];
+        indice++;
+    }
+    mostra(risultato, lRis);
+    return risultato;
+}
+
 int main()
 {
     int quanti1;
@@ -9,36 +45,12 @@ int main()
     cin >> quanti1;
     cout << endl;
     int interi1[quanti1];
-    for (int i = 0; i < quanti1; i++)
-    {
-        cout << "Ora inserisci il " << i + 1 << " numero: ";
-        cin >> interi1[i];
-    }
+    riempi(interi1, quanti1);
     int quanti2;
     cout << "Di quanti elementi? ";
     cin >> quanti2;
     cout << endl;
     int interi2[quanti2];
-    for (int i = 0; i < quanti2; i++)
-    {
-        cout << "Ora inserisci il " << i + 1 << " numero: ";
-        cin >> interi2[i];
-    }
-    int lungRis = quanti1 + quanti2;
-    int arrayRisultato[lungRis];
-    int indiceRis = 0;
-    for (int i = 0; i < quanti1; i++)
-    {
-        arrayRisultato[indiceRis]=interi1[i];
-        indiceRis++;
-    }
-    for (int i=0; i< quanti2; i++)
-    {
-        arrayRisultato[indiceRis]=interi2[i];
-        indiceRis++;
-    }
-    for (int i=0; i<lungRis; i++)
-    {
-        cout << arrayRisultato[i] << endl;
-    }
+    riempi(interi2, quanti2);
+    int *arrayConcatenato = concatena(interi1, quanti1, interi2, quanti2);
 }
